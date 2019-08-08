@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		96EBEF4E2115B4A500BFE51E /* WebRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96EBEF4C2115B4A400BFE51E /* WebRTC.framework */; };
-		96EBEF4F2115B4A500BFE51E /* JitsiMeet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96EBEF4D2115B4A500BFE51E /* JitsiMeet.framework */; };
 		96EBF0042119CADA00BFE51E /* JitsiMeetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EBF0032119CADA00BFE51E /* JitsiMeetViewController.m */; };
 		96EBF0062119CCFB00BFE51E /* RNJitsiMeetNavigator.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EBF0052119CCFB00BFE51E /* RNJitsiMeetNavigator.m */; };
 /* End PBXBuildFile section */
@@ -27,8 +25,6 @@
 
 /* Begin PBXFileReference section */
 		014A3B5C1C6CF33500B6D375 /* libRNJitsiMeet.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNJitsiMeet.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		96EBEF4C2115B4A400BFE51E /* WebRTC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WebRTC.framework; sourceTree = "<group>"; };
-		96EBEF4D2115B4A500BFE51E /* JitsiMeet.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = JitsiMeet.framework; sourceTree = "<group>"; };
 		96EBF0012119CA2500BFE51E /* JitsiMeet.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = JitsiMeet.storyboard; sourceTree = "<group>"; };
 		96EBF0022119CADA00BFE51E /* JitsiMeetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JitsiMeetViewController.h; sourceTree = "<group>"; };
 		96EBF0032119CADA00BFE51E /* JitsiMeetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JitsiMeetViewController.m; sourceTree = "<group>"; };
@@ -41,8 +37,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96EBEF4E2115B4A500BFE51E /* WebRTC.framework in Frameworks */,
-				96EBEF4F2115B4A500BFE51E /* JitsiMeet.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,8 +51,6 @@
 				96EBF0022119CADA00BFE51E /* JitsiMeetViewController.h */,
 				96EBF0032119CADA00BFE51E /* JitsiMeetViewController.m */,
 				96EBF0012119CA2500BFE51E /* JitsiMeet.storyboard */,
-				96EBEF4D2115B4A500BFE51E /* JitsiMeet.framework */,
-				96EBEF4C2115B4A400BFE51E /* WebRTC.framework */,
 				014A3B5D1C6CF33500B6D375 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -110,6 +102,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 014A3B531C6CF33500B6D375;
@@ -221,13 +214,15 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				FRAMEWORK_SEARCH_PATHS = (
+					"$(SRCROOT)/../../../ios/Pods/JitsiMeetSDK/Frameworks",
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)/../../node_modules/react-native/React/**",
-					"$(SRCROOT)/../../node_modules/react-native/Libraries/**",
+					"$(SRCROOT)/../../ios/SupportModule/React/**",
+					"$(SRCROOT)/../../ios/SupportModule/Libraries/**",
+					"$(SRCROOT)/../../../ios/Pods/JitsiMeetSDK/Frameworks",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -243,13 +238,15 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				FRAMEWORK_SEARCH_PATHS = (
+					"$(SRCROOT)/../../../ios/Pods/JitsiMeetSDK/Frameworks",
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(SRCROOT)/../../node_modules/react-native/React/**",
-					"$(SRCROOT)/../../node_modules/react-native/Libraries/**",
+					"$(SRCROOT)/../../ios/SupportModule/React/**",
+					"$(SRCROOT)/../../ios/SupportModule/Libraries/**",
+					"$(SRCROOT)/../../../ios/Pods/JitsiMeetSDK/Frameworks",
 				);
 				LDFLAGS = "";
 				OTHER_LDFLAGS = "-ObjC";
