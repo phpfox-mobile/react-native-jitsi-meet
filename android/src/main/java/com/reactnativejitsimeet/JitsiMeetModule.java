@@ -9,6 +9,7 @@ import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 import com.facebook.react.bridge.WritableMap;
 import com.facebook.react.modules.core.DeviceEventManagerModule;
+import com.facebook.react.bridge.ReadableMap;
 
 public class JitsiMeetModule extends ReactContextBaseJavaModule {
     private DeviceEventManagerModule.RCTDeviceEventEmitter eventEmitter;
@@ -40,7 +41,7 @@ public class JitsiMeetModule extends ReactContextBaseJavaModule {
     }
 
     @ReactMethod
-    public void call(String url) {
+    public void call(String url, ReadableMap options) {
         ReactApplicationContext context = getReactApplicationContext();
         Intent intent = new Intent(context, JitsiMeetNavigatorActivity.class);
         intent.putExtra("url", url);

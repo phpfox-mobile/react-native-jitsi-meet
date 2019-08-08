@@ -5,7 +5,7 @@ buildscript {
   }
 
   dependencies {
-    classpath 'com.android.tools.build:gradle:3.1.2'
+    classpath 'com.android.tools.build:gradle:3.4.2'
   }
 }
 
@@ -46,6 +46,7 @@ repositories {
 
 dependencies {
     //resolutionStrategy.force "org.webkit:android-jsc:r224109"
+  
     implementation ('org.jitsi.react:jitsi-meet-sdk:2.1.0') {
       transitive = true
       //compile ("org.webkit:android-jsc:r224109") { force = true }

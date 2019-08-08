@@ -9,7 +9,7 @@ import android.os.Bundle;
 import android.provider.Settings;
 import android.util.Log;
 import android.content.Intent;
-import android.support.v4.app.FragmentActivity;
+import androidx.fragment.app.FragmentActivity;
 
 import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.modules.core.PermissionListener;
