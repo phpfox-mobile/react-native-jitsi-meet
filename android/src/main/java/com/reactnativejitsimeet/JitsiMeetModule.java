@@ -25,19 +25,24 @@ public class JitsiMeetModule extends ReactContextBaseJavaModule {
 
     @ReactMethod
     public void initialize() {
-      FLog.d("JitsiMeet", "Initialize");
-      ReactApplicationContext context = getReactApplicationContext();
-      this.eventEmitter = context.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class);
-      JitsiBroadcastReceiver receiver = new JitsiBroadcastReceiver();
-      receiver.setReactModule(this);
-      IntentFilter filter = new IntentFilter();
-      filter.addAction("CONFERENCE_FAILED");
-      filter.addAction("CONFERENCE_JOINED");
-      filter.addAction("CONFERENCE_LEFT");
-      filter.addAction("CONFERENCE_WILL_JOIN");
-      filter.addAction("CONFERENCE_WILL_LEAVE");
-      filter.addAction("LOAD_CONFIG_ERROR");
-      context.getCurrentActivity().registerReceiver(receiver, filter, context.getPackageName() + ".permission.JITSI_BROADCAST", null);
+      try {
+            FLog.d("JitsiMeet", "Initialize");
+            ReactApplicationContext context = getReactApplicationContext();
+            this.eventEmitter = context.getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class);
+            JitsiBroadcastReceiver receiver = new JitsiBroadcastReceiver();
+            receiver.setReactModule(this);
+            IntentFilter filter = new IntentFilter();
+            filter.addAction("CONFERENCE_FAILED");
+            filter.addAction("CONFERENCE_JOINED");
+            filter.addAction("CONFERENCE_LEFT");
+            filter.addAction("CONFERENCE_WILL_JOIN");
+            filter.addAction("CONFERENCE_WILL_LEAVE");
+            filter.addAction("LOAD_CONFJitsiMeetIG_ERROR");
+            context.getCurrentActivity().registerReceiver(receiver, filter, context.getPackageName() + ".permission.JITSI_BROADCAST", null);
+        } catch (NullPointerException e) {
+            FLog.e("JitsiMeet", "Initialize: NullPointerException");
+            e.printStackTrace();
+        }
     }
 
     @ReactMethod
